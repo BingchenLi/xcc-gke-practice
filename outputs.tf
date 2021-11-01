@@ -17,3 +17,7 @@ output "kubernetes_cluster_host" {
   value       = google_container_cluster.primary.endpoint
   description = "GKE Cluster Host"
 }
+
+output "endpoint" {
+    value = kubernetes_service.app.status.0.load_balancer.0.ingress.0.ip
+}

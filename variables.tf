@@ -21,7 +21,18 @@ variable "region" {
   description = "region"
 }
 
-provider "google" {
-  project = var.project_id
-  region  = var.region
+variable "app" {
+  type        = string
+  description = "Name of application"
+  default     = "hello-world-bing"
+}
+
+// variable "zone" {
+//   default = "us-east1-d"
+// }
+
+variable "docker-image" {
+  type        = string
+  description = "name of the docker image to deploy"
+  default     = "thomaspoignant/hello-world-rest-json"
 }
